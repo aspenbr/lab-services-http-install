@@ -1,0 +1,16 @@
+---
+
+  - name: install pacotes 
+    yum: 
+     name: "{{ item }}"
+     state: installed 
+    with_items: 
+      - php 
+      - httpd 
+
+  - name: service httpd 
+    service: 
+        name: httpd 
+        enabled: yes 
+        state: started 
+# tasks file for D1/playbooks/roles/services_http_install
